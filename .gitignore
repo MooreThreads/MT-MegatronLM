@@ -1,0 +1,14 @@
+Megatron-LM*
+exp*
+llama2-test*
+output/
+logs/
+checkpoints/
+tboard/
+wandb/
+__pycache__/
+hostfile
+profiler_result/
+output_log/
+*.log
+*events.out*
