@@ -1,4 +1,5 @@
 # MT-MegatronLM
+MT-MegatronLM is an extension to [Megatron-LM](https://github.com/NVIDIA/Megatron-LM). It enables Megatron-LM to perform large-scale distributed training on Moore Threads' GPUs using a list of hardware-dependent patches. 
 
 
 ## Installation
@@ -31,7 +32,7 @@ cd MT-MegatronLM/examples/mixtral
 bash dist_run_pretrain_megatron_llama3_musa.sh
 ```
 
-### Llava
+### LLAVA
 
 ```bash
 cd MT-MegatronLM/examples/llava
@@ -60,7 +61,6 @@ change in line83:
 -->         self.config.ffn_hidden_size if not is_expert else self.config.moe_ffn_hidden_size,
 ```
 
-
 Megatron-LM/megatron/core/transformer/moe/experts.py
 
 comment line757-760
@@ -70,3 +70,6 @@ comment line757-760
         # ), "Please use GroupedMLP or TEGroupedMLP when moe_ffn_hidden_size is \
         #         different from ffn_hidden_size"
 ```
+
+## Acknowledgement
+This project modified some of training scripts from [FlagScale](https://github.com/FlagOpen/FlagScale).
